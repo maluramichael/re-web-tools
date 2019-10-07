@@ -1,5 +1,5 @@
-import React    from 'react';
-import { Link } from 'react-router-dom';
+import React       from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Icon from '@material-ui/core/Icon';
 
@@ -10,11 +10,11 @@ import './navigation.scss';
 
 function FeatureLink({ to, icon, title, description, color }) {
   return (
-    <Link to={to} className={'link'} style={{ backgroundColor: color || 'crimson' }}>
+    <NavLink to={to} className={'link'} style={{ backgroundColor: color || 'crimson' }} activeClassName={'active'}>
       <Icon>{icon}</Icon>
       <span className={'title'}>{title}</span>
       <span className={'description'}>{description}</span>
-    </Link>
+    </NavLink>
   );
 }
 

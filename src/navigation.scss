@@ -6,7 +6,7 @@ nav.navigation {
   .link {
     transition: background-color 0.1s;
 
-    background-color: crimson;
+    background-color: #333;
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,9 @@ nav.navigation {
     }
 
     &:hover {
-      background-color: red;
+    }
+
+    &.active {
     }
   }
 }
