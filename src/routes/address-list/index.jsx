@@ -22,7 +22,7 @@ import { useStyles } from '../../lib/styles';
 
 export const Meta = {
   title: 'Address lists',
-  description: 'Convert addresses. Find pattern in lists.',
+  description: 'Find pattern in addresses.',
   color: 'blue'
 };
 
