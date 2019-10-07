@@ -1,30 +1,28 @@
-.app {
-  & > nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 0;
+nav.navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 0;
 
-    a {
-      transition: background-color 0.1s;
+  a {
+    transition: background-color 0.1s;
 
-      background-color: crimson;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
+    background-color: crimson;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
 
-      .title {
-        font-weight: bold;
-        display: block;
-      }
+    .title {
+      font-weight: bold;
+      display: block;
+    }
 
-      .description {
-        display: block;
-      }
+    .description {
+      display: block;
+    }
 
-      &:hover {
-        background-color: red;
-      }
+    &:hover {
+      background-color: red;
     }
   }
 }

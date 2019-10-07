@@ -1,11 +1,12 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
 
-import Icon                            from '@material-ui/core/Icon';
+import Icon from '@material-ui/core/Icon';
 
-import './navigation.scss';
 import { Meta as AddressListMeta }     from './routes/address-list';
 import { Meta as BinaryConverterMeta } from './routes/binary-converter';
+
+import './navigation.scss';
 
 function FeatureLink({ to, icon, title, description }) {
   return (
@@ -18,9 +19,9 @@ function FeatureLink({ to, icon, title, description }) {
 }
 
 export function Navigation() {
-  return <nav>
+  return <nav className={'navigation'}>
     <FeatureLink to={'/'} icon={'star'} title={'Welcome'}/>
-    <FeatureLink to={'/address-lists'} icon={'star'}
+    <FeatureLink to={'/address-list'} icon={'star'}
                  title={AddressListMeta.title}
                  description={AddressListMeta.description}/>
     <FeatureLink to={'/binary-converter'} icon={'star'}

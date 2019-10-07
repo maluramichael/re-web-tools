@@ -8,10 +8,9 @@ import {
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { Home }            from './routes/home';
-import { AddressLists }    from './routes/address-list';
+import { AddressList }     from './routes/address-list';
 import { BinaryConverter } from './routes/binary-converter';
-
-import { Navigation } from './navigation';
+import { Navigation }      from './navigation';
 
 import './app.scss';
 
@@ -23,8 +22,8 @@ function App() {
         <Navigation/>
         <div className="container">
           <Switch>
-            <Route path="/address-lists">
-              <AddressLists/>
+            <Route path="/address-list">
+              <AddressList/>
             </Route>
             <Route path="/binary-converter">
               <BinaryConverter/>

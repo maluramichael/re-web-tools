@@ -16,8 +16,9 @@ import ExpansionPanel        from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography            from '@material-ui/core/Typography';
-import { Results }           from './results';
-import { useStyles }         from '../../lib/styles';
+
+import { Results }   from './results';
+import { useStyles } from '../../lib/styles';
 
 export const Meta = {
   title: 'Address lists',
@@ -25,7 +26,7 @@ export const Meta = {
   color: 'blue'
 };
 
-export function AddressLists() {
+export function AddressList() {
 
   // Hooks
   const classes = useStyles();
@@ -52,11 +53,24 @@ export function AddressLists() {
   if (inputType === 'list') {
     addresses = _.split('\n', input);
   } else if (inputType === 'cheat-table') {
-    const pattern = /RealAddress="(.*)"/gim;
-    let cheatTableMatch = pattern.exec(input);
-    while (cheatTableMatch != null) {
-      addresses.push(cheatTableMatch[1]);
-      cheatTableMatch = pattern.exec(input);
+    let pattern;
+
+    // eslint-disable-next-line default-case
+    switch (inputCheatTableSelector) {
+      case 'Address':
+        pattern = /<Address>(.*)<\/Address>/gim;
+        break;
+      case 'RealAddress':
+        pattern = /RealAddress="(.*)"/gim;
+        break;
+    }
+
+    if (pattern) {
+      let cheatTableMatch = pattern.exec(input);
+      while (cheatTableMatch != null) {
+        addresses.push(cheatTableMatch[1]);
+        cheatTableMatch = pattern.exec(input);
+      }
     }
   } else if (inputType === 'x64dbg') {
     const pattern = /^([ABCDEF0-9]{,1})/gim;
@@ -102,9 +116,8 @@ export function AddressLists() {
           <InputLabel>Addresses</InputLabel>
           <TextField
             fullWidth={true}
-            style={{ 'font-family': 'monospaced' }}
             multiline
-            rows={10}
+            rows={30}
             onChange={e => setInput(e.target.value)}
             margin="normal"
           />
