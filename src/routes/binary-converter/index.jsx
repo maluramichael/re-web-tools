@@ -42,7 +42,7 @@ export function BinaryConverter() {
           <TextField fullWidth={true}
                      style={{ 'font-family': 'monospaced' }}
                      multiline
-                     rows={10}
+                     rows={30}
                      onChange={e => setInput(e.target.value)}
                      margin="normal"
           />
@@ -52,22 +52,16 @@ export function BinaryConverter() {
           <h2>Options</h2>
 
           <h3>Input</h3>
-          <InputLabel>Byte format</InputLabel>
           <FormControl fullWidth={true}>
-            <Select
-              value={inputByteFormat}
-              onChange={e => setInputByteFormat(e.target.value)}
-            >
+            <InputLabel>Byte format</InputLabel>
+            <Select value={inputByteFormat} onChange={e => setInputByteFormat(e.target.value)}>
               <MenuItem value={'hex'}>Hex</MenuItem>
             </Select>
           </FormControl>
 
-          <InputLabel>Color format</InputLabel>
           <FormControl fullWidth={true}>
-            <Select
-              value={inputColorFormat}
-              onChange={e => setInputColorFormat(e.target.value)}
-            >
+            <InputLabel>Color format</InputLabel>
+            <Select value={inputColorFormat} onChange={e => setInputColorFormat(e.target.value)}>
               <MenuItem value={'rgb'}>RGB</MenuItem>
               <MenuItem value={'rgba'}>RGBA</MenuItem>
               <MenuItem value={'gray'}>Gray</MenuItem>
@@ -75,33 +69,22 @@ export function BinaryConverter() {
             </Select>
           </FormControl>
 
-          <InputLabel>Width</InputLabel>
-          <FormControl fullWidth={true}>
-            <TextField
-              value={inputWidth}
-              onChange={(e) => setInputWidth(e.target.value)}
-              type="number"
-              margin="normal"
-            />
-          </FormControl>
+          <TextField fullWidth={true}
+                     label={'Width'}
+                     value={inputWidth}
+                     onChange={(e) => setInputWidth(e.target.value)}
+                     type="number"/>
 
-          <InputLabel>Height</InputLabel>
-          <FormControl fullWidth={true}>
-            <TextField
-              value={inputWidth}
-              onChange={(e) => setInputHeight(e.target.value)}
-              type="number"
-              margin="normal"
-            />
-          </FormControl>
+          <TextField fullWidth={true}
+                     label={'Height'}
+                     value={inputHeight}
+                     onChange={(e) => setInputHeight(e.target.value)}
+                     type="number"/>
 
           <h3>Output</h3>
-          <InputLabel htmlFor="output-format">Format</InputLabel>
           <FormControl fullWidth={true}>
-            <Select
-              value={outputFormat}
-              onChange={e => setOutputFormat(e.target.value)}
-            >
+            <InputLabel htmlFor="output-format">Format</InputLabel>
+            <Select value={outputFormat} onChange={e => setOutputFormat(e.target.value)}>
               <MenuItem value={'bmp'}>Bitmap</MenuItem>
               <MenuItem value={'base64'}>Base64</MenuItem>
             </Select>
@@ -115,10 +98,7 @@ export function BinaryConverter() {
         <Grid item xs={12}>
           <h1>FAQ</h1>
           <ExpansionPanel>
-            <ExpansionPanelSummary
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
+            <ExpansionPanelSummary aria-controls="panel1a-content" id="panel1a-header">
               <Typography className={classes.heading}>What is the purpose of this tool?</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>

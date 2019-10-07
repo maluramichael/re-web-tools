@@ -30,3 +30,7 @@ textarea {
     padding: 1em
   }
 }
+
+.MuiFormControl-root:not(:first-child) {
+  margin-top: 1em;
+}

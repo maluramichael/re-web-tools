@@ -127,8 +127,8 @@ export function AddressList() {
           <h2>Options</h2>
 
           <h3>Input</h3>
-          <InputLabel htmlFor="input-type">Type</InputLabel>
           <FormControl fullWidth={true}>
+            <InputLabel>Type</InputLabel>
             <Select
               value={inputType}
               onChange={e => setInputType(e.target.value)}
@@ -139,8 +139,8 @@ export function AddressList() {
             </Select>
           </FormControl>
 
-          <InputLabel htmlFor="input-format">Format</InputLabel>
           <FormControl fullWidth={true}>
+            <InputLabel>Format</InputLabel>
             <Select
               value={inputAddressFormat}
               onChange={e => setInputAddressFormat(e.target.value)}
@@ -151,25 +151,23 @@ export function AddressList() {
           </FormControl>
 
           {inputType === 'cheat-table' && (
-            <div>
+            <FormControl fullWidth={true}>
               <InputLabel htmlFor="input-cheat-table-selector">
                 Cheat table selector
               </InputLabel>
-              <FormControl fullWidth={true}>
-                <Select
-                  value={inputCheatTableSelector}
-                  onChange={e => setInputCheatTableSelector(e.target.value)}
-                >
-                  <MenuItem value={'RealAddress'}>RealAddress</MenuItem>
-                  <MenuItem value={'Address'}>Address</MenuItem>
-                </Select>
-              </FormControl>
-            </div>
+              <Select
+                value={inputCheatTableSelector}
+                onChange={e => setInputCheatTableSelector(e.target.value)}
+              >
+                <MenuItem value={'RealAddress'}>RealAddress</MenuItem>
+                <MenuItem value={'Address'}>Address</MenuItem>
+              </Select>
+            </FormControl>
           )}
 
           <h3>Output</h3>
-          <InputLabel htmlFor="output-format">Format</InputLabel>
           <FormControl fullWidth={true}>
+            <InputLabel htmlFor="output-format">Format</InputLabel>
             <Select
               value={outputFormat}
               onChange={e => setOutputFormat(e.target.value)}
