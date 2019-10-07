@@ -3,7 +3,7 @@ nav.navigation {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   column-gap: 0;
 
-  a {
+  .link {
     transition: background-color 0.1s;
 
     background-color: crimson;

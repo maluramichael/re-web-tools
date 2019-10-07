@@ -8,9 +8,9 @@ import { Meta as BinaryConverterMeta } from './routes/binary-converter';
 
 import './navigation.scss';
 
-function FeatureLink({ to, icon, title, description }) {
+function FeatureLink({ to, icon, title, description, color }) {
   return (
-    <Link to={to}>
+    <Link to={to} className={'link'} style={{ backgroundColor: color || 'crimson' }}>
       <Icon>{icon}</Icon>
       <span className={'title'}>{title}</span>
       <span className={'description'}>{description}</span>
@@ -23,9 +23,11 @@ export function Navigation() {
     <FeatureLink to={'/'} icon={'star'} title={'Welcome'}/>
     <FeatureLink to={'/address-list'} icon={'star'}
                  title={AddressListMeta.title}
-                 description={AddressListMeta.description}/>
+                 description={AddressListMeta.description}
+                 color={AddressListMeta.color}/>
     <FeatureLink to={'/binary-converter'} icon={'star'}
                  title={BinaryConverterMeta.title}
-                 description={BinaryConverterMeta.description}/>
+                 description={BinaryConverterMeta.description}
+                 color={BinaryConverterMeta.color}/>
   </nav>;
 }

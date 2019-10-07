@@ -23,7 +23,7 @@ import { useStyles } from '../../lib/styles';
 export const Meta = {
   title: 'Address lists',
   description: 'Find pattern in addresses.',
-  color: 'blue'
+  color: '#1FCB4A'
 };
 
 export function AddressList() {

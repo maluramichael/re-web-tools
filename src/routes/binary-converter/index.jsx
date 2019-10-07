@@ -10,12 +10,13 @@ import ExpansionPanel        from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography            from '@material-ui/core/Typography';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import { useStyles }         from '../../lib/styles';
+
+import { useStyles } from '../../lib/styles';
 
 export const Meta = {
   title: 'Binary to image converter',
   description: 'Convert bytes arrays to images.',
-  color: 'green'
+  color: '#5757FF'
 };
 
 export function BinaryConverter() {
