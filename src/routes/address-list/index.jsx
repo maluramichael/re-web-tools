@@ -115,6 +115,7 @@ export function AddressList() {
 
           <InputLabel>Addresses</InputLabel>
           <TextField
+            className={'code'}
             fullWidth={true}
             multiline
             rows={30}

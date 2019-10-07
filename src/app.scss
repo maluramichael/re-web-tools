@@ -6,9 +6,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code, pre {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+code, pre, .code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1;
 }
 
 * {
