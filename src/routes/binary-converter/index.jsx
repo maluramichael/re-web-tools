@@ -18,12 +18,12 @@ export function BinaryConverter() {
   // Hooks
   // -- States
   const [input, setInput] = useState('');
-  const [inputFormat, setInputFormat] = useState('hex');
-  const [outputFormat, setOutputFormat] = useState('bmp');
-
+  const [inputByteFormat, setInputByteFormat] = useState('hex');
+  const [inputColorFormat, setInputColorFormat] = useState('rgb');
   const [inputWidth, setInputWidth] = useState(100);
   const [inputHeight, setInputHeight] = useState(100);
-  const [inputColorFormat, setInputColorFormat] = useState('rgb');
+
+  const [outputFormat, setOutputFormat] = useState('bmp');
 
   // Rendering
   return (
@@ -45,18 +45,50 @@ export function BinaryConverter() {
           <h2>Options</h2>
 
           <h3>Input</h3>
-          <InputLabel htmlFor="input-format">Format</InputLabel>
+          <InputLabel>Byte format</InputLabel>
           <FormControl fullWidth={true}>
             <Select
-              value={inputFormat}
-              onChange={e => setInputFormat(e.target.value)}
+              value={inputByteFormat}
+              onChange={e => setInputByteFormat(e.target.value)}
             >
               <MenuItem value={'hex'}>Hex</MenuItem>
-              <MenuItem value={'dec'}>Decimal</MenuItem>
             </Select>
           </FormControl>
 
-          <h3>Input</h3>
+          <InputLabel>Color format</InputLabel>
+          <FormControl fullWidth={true}>
+            <Select
+              value={inputColorFormat}
+              onChange={e => setInputColorFormat(e.target.value)}
+            >
+              <MenuItem value={'rgb'}>RGB</MenuItem>
+              <MenuItem value={'rgba'}>RGBA</MenuItem>
+              <MenuItem value={'gray'}>Gray</MenuItem>
+              <MenuItem value={'alpha'}>Alpha</MenuItem>
+            </Select>
+          </FormControl>
+
+          <InputLabel>Width</InputLabel>
+          <FormControl fullWidth={true}>
+            <TextField
+              value={inputWidth}
+              onChange={(e) => setInputWidth(e.target.value)}
+              type="number"
+              margin="normal"
+            />
+          </FormControl>
+
+          <InputLabel>Height</InputLabel>
+          <FormControl fullWidth={true}>
+            <TextField
+              value={inputWidth}
+              onChange={(e) => setInputHeight(e.target.value)}
+              type="number"
+              margin="normal"
+            />
+          </FormControl>
+
+          <h3>Output</h3>
           <InputLabel htmlFor="output-format">Format</InputLabel>
           <FormControl fullWidth={true}>
             <Select
@@ -64,6 +96,7 @@ export function BinaryConverter() {
               onChange={e => setOutputFormat(e.target.value)}
             >
               <MenuItem value={'bmp'}>Bitmap</MenuItem>
+              <MenuItem value={'base64'}>Base64</MenuItem>
             </Select>
           </FormControl>
         </Grid>
