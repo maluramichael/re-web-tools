@@ -1,6 +1,14 @@
 body {
   color: #333;
-  padding: 1em;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 * {
@@ -18,6 +26,7 @@ textarea {
 }
 
 .app {
-  // margin: 0 auto;
-  // width: 960px;
+  .container {
+    padding: 1em
+  }
 }

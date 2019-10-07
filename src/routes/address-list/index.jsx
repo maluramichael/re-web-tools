@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import * as _              from 'ramda';
 
-import Grid             from '@material-ui/core/Grid';
-import FormControl      from '@material-ui/core/FormControl';
-import InputLabel       from '@material-ui/core/InputLabel';
-import Select           from '@material-ui/core/Select';
-import MenuItem         from '@material-ui/core/MenuItem';
-import TextField        from '@material-ui/core/TextField';
-import FormGroup        from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox         from '@material-ui/core/Checkbox';
-import Button           from '@material-ui/core/Button';
-import ButtonGroup      from '@material-ui/core/ButtonGroup';
-
-import { Results } from './results';
+import Grid                  from '@material-ui/core/Grid';
+import FormControl           from '@material-ui/core/FormControl';
+import InputLabel            from '@material-ui/core/InputLabel';
+import Select                from '@material-ui/core/Select';
+import MenuItem              from '@material-ui/core/MenuItem';
+import TextField             from '@material-ui/core/TextField';
+import FormGroup             from '@material-ui/core/FormGroup';
+import FormControlLabel      from '@material-ui/core/FormControlLabel';
+import Checkbox              from '@material-ui/core/Checkbox';
+import Button                from '@material-ui/core/Button';
+import ButtonGroup           from '@material-ui/core/ButtonGroup';
+import ExpansionPanel        from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography            from '@material-ui/core/Typography';
+import { Results }           from './results';
+import { useStyles }         from '../../lib/styles';
 
 export const Meta = {
   title: 'Address lists',
@@ -24,6 +28,8 @@ export const Meta = {
 export function AddressLists() {
 
   // Hooks
+  const classes = useStyles();
+
   // -- States
   const [input, setInput] = useState('');
   const [inputType, setInputType] = useState('list');
@@ -208,6 +214,24 @@ export function AddressLists() {
             />
           </div>)
           }
+        </Grid>
+
+        <Grid item xs={12}>
+          <h1>FAQ</h1>
+          <ExpansionPanel>
+            <ExpansionPanelSummary
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className={classes.heading}>What is the purpose of this tool?</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                sit amet blandit leo lobortis eget.
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
         </Grid>
       </Grid>
     </div>

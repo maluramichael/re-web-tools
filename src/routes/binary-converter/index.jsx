@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 
-import Grid        from '@material-ui/core/Grid';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel  from '@material-ui/core/InputLabel';
-import TextField   from '@material-ui/core/TextField';
-import Select      from '@material-ui/core/Select';
-import MenuItem    from '@material-ui/core/MenuItem';
+import Grid                  from '@material-ui/core/Grid';
+import FormControl           from '@material-ui/core/FormControl';
+import InputLabel            from '@material-ui/core/InputLabel';
+import TextField             from '@material-ui/core/TextField';
+import Select                from '@material-ui/core/Select';
+import MenuItem              from '@material-ui/core/MenuItem';
+import ExpansionPanel        from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import Typography            from '@material-ui/core/Typography';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import { useStyles }         from '../../lib/styles';
 
 export const Meta = {
   title: 'Binary to image converter',
@@ -16,6 +21,8 @@ export const Meta = {
 export function BinaryConverter() {
 
   // Hooks
+  const classes = useStyles();
+
   // -- States
   const [input, setInput] = useState('');
   const [inputByteFormat, setInputByteFormat] = useState('hex');
@@ -103,6 +110,24 @@ export function BinaryConverter() {
 
         <Grid item xs={4}>
           <h2>Results</h2>
+        </Grid>
+
+        <Grid item xs={12}>
+          <h1>FAQ</h1>
+          <ExpansionPanel>
+            <ExpansionPanelSummary
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className={classes.heading}>What is the purpose of this tool?</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                sit amet blandit leo lobortis eget.
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
         </Grid>
       </Grid>
     </div>
