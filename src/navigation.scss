@@ -27,13 +27,11 @@ nav.navigation {
 
     &:hover {
       color: whitesmoke;
-      background-color: #6200ee;
     }
 
     &.active {
-      color: #1c1c1c;
-      background-color: #02f7de;
-      box-shadow: var(--background-color) 1px 1px 2px 3px;
+      transform: scale(1.05);
+      z-index: 1;
     }
   }
 }
