@@ -1,3 +1,7 @@
+:root {
+  --background-color: crimson;
+}
+
 nav.navigation {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -6,7 +10,7 @@ nav.navigation {
   .link {
     transition: background-color 0.1s;
 
-    background-color: #333;
+    background-color: var(--background-color);
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -22,9 +26,14 @@ nav.navigation {
     }
 
     &:hover {
+      color: whitesmoke;
+      background-color: #6200ee;
     }
 
     &.active {
+      color: #1c1c1c;
+      background-color: #02f7de;
+      box-shadow: var(--background-color) 1px 1px 2px 3px;
     }
   }
 }
