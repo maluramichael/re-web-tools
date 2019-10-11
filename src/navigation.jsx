@@ -27,17 +27,17 @@ function FeatureLink({ to, icon, title, description, color, ...props }) {
 export function Navigation() {
   return (
     <nav className={"navigation"}>
-      <FeatureLink to={"/"} icon={"star"} title={"Welcome"} exact />
+      <FeatureLink to={"/"} icon={"home"} title={"Welcome"} exact />
       <FeatureLink
         to={"/address-list"}
-        icon={"star"}
+        icon={"list"}
         title={AddressListMeta.title}
         description={AddressListMeta.description}
         color={AddressListMeta.color}
       />
       <FeatureLink
         to={"/binary-converter"}
-        icon={"star"}
+        icon={"image"}
         title={BinaryConverterMeta.title}
         description={BinaryConverterMeta.description}
         color={BinaryConverterMeta.color}
