@@ -10,6 +10,8 @@ When analyzing a game I often have to calculate different things manually, look 
 To make things easier, I started the project 're-tools' to gather small helpers on one page.
 I am happy about ideas and suggestions.
 
+![Screenshot](/screenshots/1.png?raw=true)
+
 ### This project was generated with create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
