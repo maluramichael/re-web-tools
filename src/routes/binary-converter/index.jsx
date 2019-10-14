@@ -16,8 +16,7 @@ import Typography            from '@material-ui/core/Typography';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 
 import * as _ from 'ramda';
-
-import { useStyles } from '../../lib/styles';
+import {useStyles} from '../../theme';
 
 export const Meta = {
   title: 'Binary to image converter',
@@ -70,9 +69,8 @@ function parseBytes(string, inputType) {
 
 export const BinaryConverter = () => {
 
-  // Hooks
+  // -- Hooks
   const classes = useStyles();
-
   const canvas = useRef(null);
 
   // -- States
@@ -116,6 +114,7 @@ export const BinaryConverter = () => {
           <h2>Data</h2>
           <InputLabel>Bytes</InputLabel>
           <TextField fullWidth={true}
+                     className={classes.textarea}
                      multiline
                      rows={30}
                      onChange={e => setInput(e.target.value)}
@@ -181,7 +180,7 @@ export const BinaryConverter = () => {
           <h1>FAQ</h1>
           <ExpansionPanel>
             <ExpansionPanelSummary aria-controls="panel1a-content" id="panel1a-header">
-              <Typography className={classes.heading}>What is the purpose of this tool?</Typography>
+              <Typography>What is the purpose of this tool?</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>

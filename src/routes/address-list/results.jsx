@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Results({ addresses, distances, outputFormat }) {
+export function Results({ className, addresses, distances, outputFormat }) {
   const lines = [];
 
   for (let index = 0; index < addresses.length - 1; index++) {
@@ -19,5 +19,5 @@ export function Results({ addresses, distances, outputFormat }) {
     }
   }
 
-  return <pre>{lines.join('\n')}</pre>;
+  return <pre className={className}>{lines.join('\n')}</pre>;
 }

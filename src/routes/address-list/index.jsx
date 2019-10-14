@@ -18,7 +18,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography            from '@material-ui/core/Typography';
 
 import { Results }   from './results';
-import { useStyles } from '../../lib/styles';
+import {useStyles} from '../../theme';
 
 export const Meta = {
   title: 'Address lists',
@@ -27,8 +27,7 @@ export const Meta = {
 };
 
 export function AddressList() {
-
-  // Hooks
+  // -- Hooks
   const classes = useStyles();
 
   // -- States
@@ -115,7 +114,7 @@ export function AddressList() {
 
           <InputLabel>Addresses</InputLabel>
           <TextField
-            className={'code'}
+            className={classes.textarea}
             fullWidth={true}
             multiline
             rows={30}
@@ -220,6 +219,7 @@ export function AddressList() {
               </Button>
             </ButtonGroup>
             <Results
+              className={classes.textarea}
               addresses={addresses}
               distances={distances}
               outputFormat={outputFormat}
@@ -235,7 +235,7 @@ export function AddressList() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className={classes.heading}>What is the purpose of this tool?</Typography>
+              <Typography>What is the purpose of this tool?</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
