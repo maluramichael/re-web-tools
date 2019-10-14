@@ -21,7 +21,7 @@ import { useStyles } from '../../lib/styles';
 
 export const Meta = {
   title: 'Binary to image converter',
-  description: 'Convert bytes arrays to images.',
+  description: 'Convert bytes to images.',
   color: '#5757FF'
 };
 
