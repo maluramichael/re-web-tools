@@ -15,12 +15,12 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography            from '@material-ui/core/Typography';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 
-import * as _ from 'ramda';
-import {useStyles} from '../../theme';
+import * as _        from 'ramda';
+import { useStyles } from '../../theme';
 
 export const Meta = {
-  title: 'Binary to image converter',
-  description: 'Convert bytes to images.',
+  title: 'Bytes to image',
+  description: 'Visualize bytes as an image.',
   color: '#5757FF'
 };
 

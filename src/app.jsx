@@ -3,16 +3,18 @@ import {
   BrowserRouter as Router,
   Route,
   Switch
-} from 'react-router-dom';
+}            from 'react-router-dom';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline      from '@material-ui/core/CssBaseline';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import theme from './theme';
+import theme            from './theme';
 
-import {Home} from './routes/home';
-import {AddressList} from './routes/address-list';
-import {BinaryConverter} from './routes/binary-converter';
-import {Navigation} from './navigation';
+import { Home }             from './routes/home';
+import { AddressList }      from './routes/address-list';
+import { BinaryConverter }  from './routes/binary-converter';
+import { GenericConverter } from './routes/generic-converter';
+
+import { Navigation } from './navigation';
 
 import './app.scss';
 
@@ -30,6 +32,9 @@ function App() {
               </Route>
               <Route path="/binary-converter">
                 <BinaryConverter/>
+              </Route>
+              <Route path="/generic-converter">
+                <GenericConverter/>
               </Route>
               <Route path="/">
                 <Home/>
