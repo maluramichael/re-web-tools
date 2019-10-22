@@ -26,6 +26,22 @@ textarea {
   max-width: 100%;
 }
 
+canvas {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px 1px #e0e0e0;
+  background-color: white;
+  &.zoomed {
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+    width: 95%;
+    z-index: 10;
+  }
+}
+
 .app {
   padding: 1em;
   .container {

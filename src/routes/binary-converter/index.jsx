@@ -81,6 +81,7 @@ export const BinaryConverter = () => {
   const [inputWidth, setInputWidth] = useState(100);
   const [inputHeight, setInputHeight] = useState(100);
   const [outputFormat, setOutputFormat] = useState('bmp');
+  const [outputZoom, setOutputZoom] = useState(false);
 
   useEffect(() => {
     if (canvas) {
@@ -173,7 +174,11 @@ export const BinaryConverter = () => {
 
         <Grid item xs={4}>
           <h2>Results</h2>
-          <canvas ref={canvas} width={inputWidth} height={inputHeight}/>
+          <canvas ref={canvas}
+            width={inputWidth}
+            height={inputHeight}
+            className={outputZoom ? "zoomed" : ""}
+            onClick={() => setOutputZoom(!outputZoom)}/>
         </Grid>
 
         <Grid item xs={12}>
